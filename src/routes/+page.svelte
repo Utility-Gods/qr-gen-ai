@@ -1,5 +1,11 @@
-<div class="text-red">Twailwind working</div>
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import Footer from '$lib/app_components/Footer.svelte';
+	import Header from '$lib/app_components/Header.svelte';
+	import Hero from '$lib/app_components/Hero.svelte';
+</script>
 
-<h1 class="text-3xl font-bold underline text-red-500">Hello world!</h1>
+<div class="w-screen h-screen flex flex-col gap-6 bg-theme-900">
+	<Header />
+	<Hero />
+	<Footer />
+</div>
