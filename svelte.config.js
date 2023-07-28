@@ -1,7 +1,6 @@
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import adapter from '@sveltejs/adapter-auto';
-
-/** @type {import('@sveltejs/kit').Config} */
+/** @type {import('@sveltejs/kit').Config}*/
 const config = {
 	kit: {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
@@ -13,8 +12,9 @@ const config = {
 			'$components/*': 'src/lib/components/*'
 		}
 	},
-
-	preprocess: [vitePreprocess({})]
+	preprocess: [vitePreprocess({})],
+	shadcn: {
+		componentPath: './src/lib/components/ui'
+	}
 };
-
 export default config;

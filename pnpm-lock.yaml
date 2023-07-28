@@ -10,6 +10,9 @@ dependencies:
   lucide-svelte:
     specifier: ^0.263.0
     version: 0.263.0(svelte@4.1.1)
+  svelte-qrcode:
+    specifier: ^1.0.0
+    version: 1.0.0
   tailwind-merge:
     specifier: ^1.14.0
     version: 1.14.0
@@ -1774,6 +1777,10 @@ packages:
       svelte: 4.1.1
       typescript: 5.1.6
     dev: true
+
+  /svelte-qrcode@1.0.0:
+    resolution: {integrity: sha512-WrOvyyxtUzu32gVIDxcFMy0A7uUpbl/8yHaTNOsUaI8W5V4wa7AmReCjffhNY2aS42CqCLJ6qdwUoj/KxmeZzA==}
+    dev: false
 
   /svelte@4.1.1:
     resolution: {integrity: sha512-Enick5fPFISLoVy0MFK45cG+YlQt6upw8skEK9zzTpJnH1DqEv8xOZwizCGSo3Q6HZ7KrZTM0J18poF7aQg5zw==}
