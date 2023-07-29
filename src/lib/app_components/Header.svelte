@@ -5,7 +5,7 @@
 <header
 	class="sticky top-0 z-40 w-full py-2 border-b shadow-sm supports-backdrop-blur:bg-theme-50/60 backdrop-blur border-theme-800"
 >
-	<div class="xl:w-[69%] w-full flex items-center justify-between m-auto">
+	<div class="xl:w-[69%] w-full flex items-center justify-between m-auto text-theme-200">
 		<div class="flex-1 flex">
 			<div class="w-7 mr-3">
 				<QrCode />

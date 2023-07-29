@@ -3,4 +3,6 @@
 	export let url;
 </script>
 
-<QrCode value={url} />
+<div>
+	<QrCode value={url} size="300" padding="2" />
+</div>
