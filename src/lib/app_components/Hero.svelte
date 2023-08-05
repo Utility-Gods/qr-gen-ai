@@ -71,12 +71,28 @@
 			// do some thing
 		}
 	});
+
+	function shareQR() {
+		if (navigator.share) {
+			navigator
+				.share({
+					title: 'WebShare API Demo',
+					url: 'https://codepen.io/ayoisaiah/pen/YbNazJ'
+				})
+				.then(() => {
+					console.log('Thanks for sharing!');
+				})
+				.catch(console.error);
+		} else {
+			// fallback
+		}
+	}
 </script>
 
 <div
-	class="flex flex-col items-center flex-1 xl:p-6 p-3 xl:w-[55%] w-[96%] m-auto font-semibold overflow-auto"
+	class="flex flex-col items-center flex-1 xl:p-6 p-3 xl:w-[55%] w-[96%] m-auto font-semibold overflow-auto py-12"
 >
-	<div class="text-theme-200 text-xl xl:text-3xl text-center mb-6">
+	<div class="text-theme-200 text-2xl xl:text-3xl text-center mb-6">
 		Paste your text here and Generate QR Code
 	</div>
 	<Textarea class="my-6" on:input={onChangeText} />
@@ -90,10 +106,16 @@
 		>
 			<svelte:component this={QRcomponent} url={text} />
 		</div>
-		<Button id="saveBtn" class="bg-theme-100" on:click={saveImage}>
-			<Save class="w-5 h-5 mr-2" />
-			Save QR Code</Button
-		>
+		<div class="flex items-center gap-3">
+			<!-- <Button id="saveBtn" variant="outline" class="" on:click={shareQR}>
+				<Save class="w-5 h-5 mr-2" />
+				Share QR Code</Button
+			> -->
+			<Button id="saveBtn" class="bg-theme-100" on:click={saveImage}>
+				<Save class="w-5 h-5 mr-2" />
+				Save QR Code</Button
+			>
+		</div>
 	{/if}
 </div>
 
