@@ -4,5 +4,5 @@ COPY docker/package.json ./
 RUN npm install --force
 COPY . .
 COPY docker/package.json ./
-EXPOSE 5175
+EXPOSE 5176
 CMD ["npm", "run","dev","--open"]
