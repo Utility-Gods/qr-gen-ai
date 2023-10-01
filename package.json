@@ -2,8 +2,9 @@
 	"name": "qr-gen-ai",
 	"version": "0.0.1",
 	"private": true,
+	"type": "module",
 	"scripts": {
-		"start": "export PORT=5175 && node ./build",
+		"start": "export PORT=5176 && node ./build",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
@@ -33,7 +34,6 @@
 		"typescript": "^5.0.0",
 		"vite": "^4.4.2"
 	},
-	"type": "module",
 	"dependencies": {
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.0.0",
