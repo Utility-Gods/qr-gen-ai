@@ -14,6 +14,7 @@
 		className
 	)}
 	bind:value
+	rows={6}
 	on:blur
 	on:change
 	on:click

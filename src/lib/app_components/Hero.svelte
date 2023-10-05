@@ -1,8 +1,11 @@
 <script>
+	import  Save  from '$lib/icons/Save.svelte';
+
 	import Button from '$components/ui/button/Button.svelte';
 	import Textarea from '$components/ui/textarea/Textarea.svelte';
-	import { QrCodeIcon, Save } from 'lucide-svelte';
 	import { onMount } from 'svelte';
+	import Qr from '$lib/icons/QR.svelte';
+	import { toast } from 'svelte-sonner';
 
 	let text = '';
 	let QRcomponent;
@@ -47,6 +50,8 @@
 
 		// Clean up by revoking the URL object
 		URL.revokeObjectURL(url);
+
+		toast.success('QR Code Saved Successfully');
 	}
 
 	function scrollToElement(element_id) {
@@ -71,33 +76,19 @@
 			// do some thing
 		}
 	});
-
-	function shareQR() {
-		if (navigator.share) {
-			navigator
-				.share({
-					title: 'WebShare API Demo',
-					url: 'https://codepen.io/ayoisaiah/pen/YbNazJ'
-				})
-				.then(() => {
-					console.log('Thanks for sharing!');
-				})
-				.catch(console.error);
-		} else {
-			// fallback
-		}
-	}
 </script>
 
 <div
-	class="flex flex-col items-center flex-1 xl:p-6 p-3 xl:w-[55%] w-[96%] m-auto font-semibold overflow-auto py-12"
+	class="flex flex-col items-center flex-1 xl:p-6 p-3 xl:w-[55%] w-[96%] m-auto font-semibold py-12"
 >
 	<div class="text-theme-200 text-2xl xl:text-3xl text-center mb-6">
 		Paste your text here and Generate QR Code
 	</div>
-	<Textarea class="my-6" on:input={onChangeText} />
+	<Textarea class="my-6" on:input={onChangeText} placeholder="paste some URL or text to generator QR fod" />
 	<Button class="bg-theme-100" on:click={generateCode}>
-		<QrCodeIcon class="w-5 h-5 mr-2" />
+		<div class="w-5 h-5 mr-2">
+			<Qr />
+		</div>
 		Generate QR Code</Button
 	>
 	{#if text.length > 0 && generate_code}
@@ -112,7 +103,10 @@
 				Share QR Code</Button
 			> -->
 			<Button id="saveBtn" class="bg-theme-100" on:click={saveImage}>
-				<Save class="w-5 h-5 mr-2" />
+				<div class="w-5 h-5 mr-2">
+					<Save />
+				</div>
+
 				Save QR Code</Button
 			>
 		</div>
